@@ -1,0 +1,11 @@
+<app-main-toolbar
+  (toggleSideNav)="drawer.toggle()"
+  ></app-main-toolbar>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer mode="side">
+    Some content will be here 
+  </mat-drawer>
+
+  <app-map></app-map>
+
+</mat-drawer-container>
