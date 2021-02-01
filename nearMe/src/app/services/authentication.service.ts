@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import * as authData from '../../app/auth.json';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -8,13 +10,19 @@ import { Router } from '@angular/router';
 export class AuthenticationService {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) { }
 
   login(userName: string, password: string) {
-    localStorage.setItem('token', `${userName}${password}`);
-    this.router.navigate(['']);
+    if (userName === authData.loggedInUser.userName &&
+        password === authData.loggedInUser.password) {
 
+        localStorage.setItem('token', `${authData.jwtToken}`);
+        this.router.navigate(['']);
+    } else {
+      this.snackBar.open('Login data not correct', 'OK', {duration: 2000});
+    }
   }
 
   isValid(): boolean {
@@ -24,7 +32,8 @@ export class AuthenticationService {
     else { return false; }
   }
 
-  getUser() {
-
+  logOut() {
+    localStorage.removeItem('token');
+    location.reload();
   }
 }

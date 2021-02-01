@@ -1,0 +1,16 @@
+<mat-toolbar class="main-toolbar">
+  <button 
+    mat-icon-button
+    color="ThemePalette"
+    (click)="toggleSideNav.emit(true)">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My Application</span>
+  <button
+    class="main-toolbar__logout_icon"
+    mat-icon-button
+    color="ThemePalette"
+    (click)="signOut()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>

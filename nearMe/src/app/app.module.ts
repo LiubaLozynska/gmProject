@@ -3,21 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainToolbarComponent } from './main-toolbar/main-toolbar.component';
-import { MapComponent } from './map/map.component';
-import { SideNavigationComponent } from './side-navigation/side-navigation.component';
-import { HomeComponent } from './home/home.component';
+import { MainToolbarComponent } from './components/main-toolbar/main-toolbar.component';
+import { MapComponent } from './components/map/map.component';
+import { SideNavigationComponent } from './components/side-navigation/side-navigation.component';
+import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { LoginPageComponent } from './login-page/login-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AgmCoreModule } from '@agm/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AgmCoreModule } from '@agm/core';
     MatInputModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBLyOeY14pQEK5V5OgU2fpUFry3_8Ow-uM'
-    })
+    }),
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
