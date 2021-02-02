@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AgmCoreModule } from '@agm/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBLyOeY14pQEK5V5OgU2fpUFry3_8Ow-uM'
     }),
-    MatSnackBarModule
+    MatSnackBarModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

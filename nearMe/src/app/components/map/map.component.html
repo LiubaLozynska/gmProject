@@ -1,3 +1,24 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map [latitude]="+lat" [longitude]="+lng" [zoom]="15">
+  <agm-marker 
+    [latitude]="+lat"
+    [longitude]="+lng"
+    cdkOverlayOrigin
+    #trigger="cdkOverlayOrigin"
+    (click)="onClick()"></agm-marker>
+      <ng-template
+      cdkConnectedOverlay
+      [cdkConnectedOverlayOrigin]="trigger"
+      [cdkConnectedOverlayOpen]="isOpen"
+    >
+    <ul class="example-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </ng-template>
+
+
+  <agm-marker [latitude]="+lat+0.001" [longitude]="+lng"></agm-marker>
+  <agm-marker [latitude]="+lat+0.0002" [longitude]="+lng+0.0005"></agm-marker>
+  <agm-marker [latitude]="+lat+0.00022" [longitude]="+lng+0.5366"></agm-marker>
 </agm-map>
